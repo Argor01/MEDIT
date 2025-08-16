@@ -1,0 +1,53 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:../medit.db"
+}
+
+generator client {
+  provider = "prisma-client-py"
+  output   = "../generated"
+}
+
+model User {
+  id                Int       @id @default(autoincrement())
+  email             String    @unique
+  password_hash     String
+  age               Int?
+  phone             String?
+  patients          Patient[]
+  doctors           Doctor[]
+}
+
+model Patient {
+  id               Int       @id @default(autoincrement())
+  user_id          Int       @unique
+  name_patient     String
+  insurance_number String    @unique
+  user             User      @relation(fields: [user_id], references: [id])
+  medical_facilities Medical_facility[]
+}
+
+model Doctor {
+  id                Int       @id @default(autoincrement())
+  user_id           Int       @unique
+  name_doctor       String
+  specialization    String
+  license_number    String    @unique
+  years_of_experience Int?
+  education         String?
+  user              User      @relation(fields: [user_id], references: [id])
+  medical_facilities Medical_facility[]
+}
+
+model Medical_facility {
+  id            Int       @id @default(autoincrement())
+  name          String
+  address       String
+  phone         String?
+  email         String?
+  facility_type String?
+  doctor_id     Int?
+  patient_id    Int?
+  doctor        Doctor?   @relation(fields: [doctor_id], references: [id])
+  patient       Patient?  @relation(fields: [patient_id], references: [id])
+}

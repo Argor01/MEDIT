@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/20 backdrop-blur-md border border-white/30;
+  }
+  
+  .card-shadow {
+    @apply shadow-lg shadow-blue-500/10;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom animations */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.12); }
+  40% { transform: scale(0.98); }
+  60% { transform: scale(1.08); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+/* Organ overlay styles */
+.organ-overlay {
+  @apply absolute cursor-pointer transition-all duration-300 rounded-full border-2 border-transparent z-10;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.organ-overlay:hover {
+  @apply scale-110;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.organ-overlay.active {
+  @apply animate-pulse-organ;
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
