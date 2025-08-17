@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-  title: 'Health+ | Медицинская платформа',
+  title: 'MEDIT | Медицинская платформа',
   description: 'Современная платформа для мониторинга здоровья и медицинских данных',
 }
 
