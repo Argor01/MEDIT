@@ -193,46 +193,6 @@ graph LR
 
 ---
 
-## 📄 Лицензия
-
-Этот проект распространяется под лицензией MIT. Подробности см. в файле [LICENSE](LICENSE).
-
----
-
-## 📞 Контакты
-
-<div align="center">
-
-### 👥 Команда разработки
-
-**MEDIT Team** — *Здоровье семьи в цифровую эпоху*
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Argor01/MEDIT)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:team@medit.com)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/medit_support)
-
----
-
-### 🌟 Поддержите проект
-
-Если MEDIT помог вам или вашей семье, поставьте ⭐ на GitHub!
-
-[![GitHub stars](https://img.shields.io/github/stars/Argor01/MEDIT?style=social)](https://github.com/Argor01/MEDIT/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Argor01/MEDIT?style=social)](https://github.com/Argor01/MEDIT/network/members)
-
-</div>
-
----
-
-<div align="center">
-
-**Сделано с ❤️ для здоровья семей**
-
-*MEDIT © 2024. Все права защищены.*
-
-</div>
-
-
 ---
 
 ## 🏗️ Архитектура
