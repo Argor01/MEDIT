@@ -1,0 +1,355 @@
+.medicine-calendar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.calendar-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-header {
+  margin-bottom: 2rem;
+}
+
+.calendar-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.completed {
+  background-color: #10b981;
+}
+
+.legend-dot.partial {
+  background-color: #f59e0b;
+}
+
+.legend-dot.pending {
+  background-color: #6b7280;
+}
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.medicine-calendar-component {
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+.medicine-calendar-component .react-calendar__navigation {
+  margin-bottom: 1rem;
+}
+
+.medicine-calendar-component .react-calendar__navigation button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  min-width: 44px;
+  transition: all 0.3s ease;
+}
+
+.medicine-calendar-component .react-calendar__navigation button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.medicine-calendar-component .react-calendar__navigation button:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.medicine-calendar-component .react-calendar__month-view__weekdays {
+  margin-bottom: 0.5rem;
+}
+
+.medicine-calendar-component .react-calendar__month-view__weekdays__weekday {
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.medicine-calendar-component .react-calendar__month-view__days__day {
+  position: relative;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-calendar-component .react-calendar__month-view__days__day:hover {
+  background-color: #f3f4f6;
+}
+
+.medicine-calendar-component .react-calendar__month-view__days__day--neighboringMonth {
+  color: #d1d5db;
+}
+
+.calendar-tile-content {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.events-indicator {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.pill-indicator {
+  width: 8px;
+  height: 8px;
+  color: #667eea;
+}
+
+.events-count {
+  color: #374151;
+}
+
+.calendar-tile-completed {
+  background-color: #d1fae5;
+  border: 2px solid #10b981;
+}
+
+.calendar-tile-partial {
+  background-color: #fef3c7;
+  border: 2px solid #f59e0b;
+}
+
+.calendar-tile-pending {
+  background-color: #f3f4f6;
+  border: 2px solid #6b7280;
+}
+
+.events-panel {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.events-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.no-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.no-events-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #d1d5db;
+}
+
+.no-events p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.event-item:hover {
+  border-color: #667eea;
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.event-item.completed {
+  border-color: #10b981;
+  background-color: #d1fae5;
+}
+
+.event-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 80px;
+}
+
+.time-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+}
+
+.event-time span {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-medicine {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.event-dosage {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.event-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.status-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.status-icon.completed {
+  color: #10b981;
+}
+
+.status-icon.pending {
+  color: #6b7280;
+}
+
+.event-item.completed .event-medicine {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.event-item.completed .event-dosage {
+  color: #9ca3af;
+}
+
+@media (max-width: 1024px) {
+  .medicine-calendar {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .calendar-container,
+  .events-panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .medicine-calendar {
+    padding: 0.5rem;
+  }
+  
+  .calendar-container,
+  .events-panel {
+    padding: 1rem;
+  }
+  
+  .calendar-legend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .medicine-calendar-component .react-calendar__month-view__days__day {
+    min-height: 50px;
+    padding: 0.25rem;
+  }
+  
+  .events-indicator {
+    font-size: 0.5rem;
+    padding: 1px 2px;
+  }
+  
+  .pill-indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
